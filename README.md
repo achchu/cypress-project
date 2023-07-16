@@ -37,3 +37,11 @@ To run a specific test, use the command: `yarn cypress:run --spec "<spec_file>"`
 ### Reporting
 
 Cypress Mochawesome Reporter is set up for better visualization of test reports.
+
+### Test notes
+
+Please note that the tests will not run as I've removed all references to the actual website and apis. The first api test will fail as it cannot authenticate. The E2E test was passing and working fine but before submitting the task I've removed the references to the website, will attach screenshots below that show successful test runs
+
+
+![Screenshot 2023-07-16 at 16 47 46](https://github.com/achchu/cypress-project/assets/31702196/3a1e9398-1d78-4d17-afa4-ee4d97d42b2d)
+![Screenshot 2023-07-16 at 16 47 56](https://github.com/achchu/cypress-project/assets/31702196/17e564f8-d32e-4c1a-a791-83d081cca8b4)
