@@ -6,10 +6,11 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:run --spec <spec_file>" : "cypress run --spec <spec_file>"
+    "cypress:run --spec <spec_file>": "cypress run --spec <spec_file>"
   },
   "dependencies": {
     "cypress-mochawesome-reporter": "^3.5.1",
+    "lint": "^0.8.19",
     "prettier": "^3.0.0"
   }
 }
