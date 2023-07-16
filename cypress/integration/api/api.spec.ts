@@ -41,6 +41,9 @@ describe("Payment Initiate Endpoint", () => {
     };
   });
 
+  // Test Case: Successful Payment Initiation with Valid Parameters
+  // This test case validates that a payment can be successfully initiated
+  // when all parameters are correctly specified.
   it("Successfully initiates a payment with valid parameters", () => {
     initiatePayment(params).then((response) => {
       assertSuccessfulPayment(response);
@@ -49,6 +52,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Successful Payment Initiation with Minimum Required Parameters
+  // This test case validates that a payment can be successfully initiated
+  // when only the minimum required parameters are provided.
   it("Successfully initiates a payment with minimum required parameters", () => {
     const minData = JSON.parse(JSON.stringify(params));
     delete minData.identifier;
@@ -58,6 +64,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Failed Payment Initiation with Missing Parameters
+  // This test case validates that a payment cannot be initiated
+  // when required parameters are missing.
   it("Fails to initiate a payment without required parameters", () => {
     initiatePayment({}, false).then((response) => {
       expect(response.status).to.eq(400);
@@ -70,6 +79,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Failed Payment Initiation Without Authorization
+  // This test case validates that a payment cannot be initiated
+  // if the Authorization header is missing.
   it("Fails to initiate a payment without authorization", () => {
     delete headers["Authorization"];
 
@@ -79,6 +91,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Failed Payment Initiation with Invalid Token
+  // This test case validates that a payment cannot be initiated
+  // when an invalid token is provided in the Authorization header.
   it("Fails to initiate a payment with an invalid token", () => {
     headers["Authorization"] = "Bearer InvalidToken";
 
@@ -93,6 +108,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Failed Payment Initiation with Wrong Token Definition
+  // This test case validates that a payment cannot be initiated
+  // when the Authorization header doesn't follow the expected format.
   it("Fails to initiate a payment with a wrong token definition", () => {
     headers["Authorization"] = "WrongTokenDefinition";
 
@@ -107,6 +125,9 @@ describe("Payment Initiate Endpoint", () => {
     });
   });
 
+  // Test Case: Failed Payment Initiation with Invalid Webhook URL
+  // This test case validates that a payment cannot be initiated
+  // when an invalid URL is provided in the Webhook-URL header.
   it("Fails to initiate a payment with an invalid webhook URL", () => {
     headers["Webhook-URL"] = "InvalidURL";
 
