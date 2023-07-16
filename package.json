@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "cypress": "^12.17.1",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run --spec <spec_file>" : "cypress run --spec <spec_file>"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "prettier": "^3.0.0"
+  }
+}
